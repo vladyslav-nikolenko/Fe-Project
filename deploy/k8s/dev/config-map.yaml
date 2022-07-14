@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: news-client-dev
+  labels:
+    app: news-client-dev
+data:
+  ENVIRONMENT: dev
+  APP_NAME: news-client
+  APP_COLOR: blue

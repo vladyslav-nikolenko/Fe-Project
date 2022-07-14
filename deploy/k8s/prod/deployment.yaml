@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: news-client
+  name: news-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: news-client
+  template:
+    metadata:
+      labels:
+        app: news-client
+    spec:
+      containers:
+        - image: image
+          name: news-client
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: news-client
+          livenessProbe:
+            httpGet:
+              path: /nginx_status
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /nginx_status
+              port: 8080
+          resources:
+            limits:
+              cpu: "0.05"
+              memory: 12M
+            requests:
+              cpu: "0.01"
+              memory: 8M
+          ports:
+          - containerPort: 8080
+            name: http
+      imagePullSecrets:
+            - name: pull-secret
