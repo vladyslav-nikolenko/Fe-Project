@@ -9,7 +9,7 @@
     "classnames": "^2.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "evergreen-ui": "^6.9.10",
+    "evergreen-ui": "6.0.0-36",
     "lerna": "^4.0.0",
     "prettier": "^2.6.2",
     "react": "^16.14.0",
