@@ -1,0 +1,471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div
+      data-evergreen-toaster-container=""
+    >
+      <span
+        class="css-1sugtjn"
+      />
+    </div>
+    <div>
+      <div
+        class="header"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="logo"
+          >
+            <div
+              class="markLogo"
+            >
+              m
+            </div>
+            .news
+          </div>
+          <div
+            class="headerCategories"
+            display="flex"
+          >
+            <a
+              class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+              href="/all"
+              rel="noopener"
+            >
+              All
+            </a>
+            <a
+              class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+              href="/places"
+              rel="noopener"
+            >
+              Places
+            </a>
+            <a
+              class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+              href="/people"
+              rel="noopener"
+            >
+              People
+            </a>
+            <a
+              class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+              href="/events"
+              rel="noopener"
+            >
+              Events
+            </a>
+          </div>
+          <div
+            class="userLogin"
+          >
+            <button
+              class="button"
+            >
+              Log In
+            </button>
+            <div
+              class="IdentificationModal"
+            >
+              <div
+                class="ModalContent"
+              >
+                <form>
+                  <div
+                    class="ub-mb_24px ub-box-szg_border-box"
+                  >
+                    <div
+                      class="ub-dspl_flex ub-flx-drct_column ub-mb_8px ub-box-szg_border-box"
+                    >
+                      <label
+                        class="ub-color_101840 ub-fnt-fam_b77syt ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_18px ub-ltr-spc_-0-05px ub-dspl_block ub-mb_0px ub-box-szg_border-box"
+                        for="TextInputField-1"
+                      >
+                        Username
+                         
+                        <span
+                          title="This field is required."
+                        >
+                          *
+                        </span>
+                      </label>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="css-12rdf6g ub-w_100prcnt ub-fnt-fam_b77syt ub-b-btm_1px-solid-transparent ub-b-lft_1px-solid-transparent ub-b-rgt_1px-solid-transparent ub-b-top_1px-solid-transparent ub-otln_iu2jf4 ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-ln-ht_16px ub-fnt-sze_12px ub-color_474d66 ub-pl_12px ub-pr_12px ub-tstn_n1akt6 ub-h_32px ub-bg-clr_white ub-b-btm-clr_d8dae5 ub-b-lft-clr_d8dae5 ub-b-rgt-clr_d8dae5 ub-b-top-clr_d8dae5 ub-f-wght_400 ub-ltr-spc_0 ub-box-szg_border-box"
+                      id="TextInputField-1"
+                      name="username"
+                      placeholder="username"
+                      required=""
+                      spellcheck="true"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                  <div
+                    class="ub-mb_24px ub-box-szg_border-box"
+                  >
+                    <div
+                      class="ub-dspl_flex ub-flx-drct_column ub-mb_8px ub-box-szg_border-box"
+                    >
+                      <label
+                        class="ub-color_101840 ub-fnt-fam_b77syt ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_18px ub-ltr-spc_-0-05px ub-dspl_block ub-mb_0px ub-box-szg_border-box"
+                        for="TextInputField-2"
+                      >
+                        Password
+                         
+                        <span
+                          title="This field is required."
+                        >
+                          *
+                        </span>
+                      </label>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="css-12rdf6g ub-w_100prcnt ub-fnt-fam_b77syt ub-b-btm_1px-solid-transparent ub-b-lft_1px-solid-transparent ub-b-rgt_1px-solid-transparent ub-b-top_1px-solid-transparent ub-otln_iu2jf4 ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-ln-ht_16px ub-fnt-sze_12px ub-color_474d66 ub-pl_12px ub-pr_12px ub-tstn_n1akt6 ub-h_32px ub-bg-clr_white ub-b-btm-clr_d8dae5 ub-b-lft-clr_d8dae5 ub-b-rgt-clr_d8dae5 ub-b-top-clr_d8dae5 ub-f-wght_400 ub-ltr-spc_0 ub-box-szg_border-box"
+                      id="TextInputField-2"
+                      name="password"
+                      placeholder="password"
+                      required=""
+                      spellcheck="true"
+                      type="password"
+                      value=""
+                    />
+                  </div>
+                  <div
+                    class="modalButtons"
+                  >
+                    <button
+                      class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                      type="button"
+                    >
+                      Log In
+                    </button>
+                    <button
+                      class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                      type="button"
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div
+            class="isAuth"
+            hidden=""
+          >
+            <div
+              class="userAuth"
+              hidden=""
+            >
+              <svg
+                class="userIcon"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                version="1.1"
+                viewBox="0 0 16 16"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"
+                />
+              </svg>
+              <button
+                class="button"
+                type="button"
+              >
+                Log Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="main"
+      >
+        Loading...
+      </div>
+      <div
+        class="footer"
+      >
+        <div
+          class="footerContent"
+        >
+          <p>
+            © 2022 | All Rights Reserved | Developed by Wroclaw Mastery Team
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="header"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="logo"
+        >
+          <div
+            class="markLogo"
+          >
+            m
+          </div>
+          .news
+        </div>
+        <div
+          class="headerCategories"
+          display="flex"
+        >
+          <a
+            class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+            href="/all"
+            rel="noopener"
+          >
+            All
+          </a>
+          <a
+            class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+            href="/places"
+            rel="noopener"
+          >
+            Places
+          </a>
+          <a
+            class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+            href="/people"
+            rel="noopener"
+          >
+            People
+          </a>
+          <a
+            class="css-b61p4k ub-fnt-sze_14px ub-f-wght_400 ub-ln-ht_20px ub-ltr-spc_-0-05px ub-fnt-fam_b77syt ub-color_3366FF ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-tstn_jgs65e ub-box-szg_border-box"
+            href="/events"
+            rel="noopener"
+          >
+            Events
+          </a>
+        </div>
+        <div
+          class="userLogin"
+        >
+          <button
+            class="button"
+          >
+            Log In
+          </button>
+          <div
+            class="IdentificationModal"
+          >
+            <div
+              class="ModalContent"
+            >
+              <form>
+                <div
+                  class="ub-mb_24px ub-box-szg_border-box"
+                >
+                  <div
+                    class="ub-dspl_flex ub-flx-drct_column ub-mb_8px ub-box-szg_border-box"
+                  >
+                    <label
+                      class="ub-color_101840 ub-fnt-fam_b77syt ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_18px ub-ltr-spc_-0-05px ub-dspl_block ub-mb_0px ub-box-szg_border-box"
+                      for="TextInputField-1"
+                    >
+                      Username
+                       
+                      <span
+                        title="This field is required."
+                      >
+                        *
+                      </span>
+                    </label>
+                  </div>
+                  <input
+                    aria-invalid="false"
+                    class="css-12rdf6g ub-w_100prcnt ub-fnt-fam_b77syt ub-b-btm_1px-solid-transparent ub-b-lft_1px-solid-transparent ub-b-rgt_1px-solid-transparent ub-b-top_1px-solid-transparent ub-otln_iu2jf4 ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-ln-ht_16px ub-fnt-sze_12px ub-color_474d66 ub-pl_12px ub-pr_12px ub-tstn_n1akt6 ub-h_32px ub-bg-clr_white ub-b-btm-clr_d8dae5 ub-b-lft-clr_d8dae5 ub-b-rgt-clr_d8dae5 ub-b-top-clr_d8dae5 ub-f-wght_400 ub-ltr-spc_0 ub-box-szg_border-box"
+                    id="TextInputField-1"
+                    name="username"
+                    placeholder="username"
+                    required=""
+                    spellcheck="true"
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="ub-mb_24px ub-box-szg_border-box"
+                >
+                  <div
+                    class="ub-dspl_flex ub-flx-drct_column ub-mb_8px ub-box-szg_border-box"
+                  >
+                    <label
+                      class="ub-color_101840 ub-fnt-fam_b77syt ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_18px ub-ltr-spc_-0-05px ub-dspl_block ub-mb_0px ub-box-szg_border-box"
+                      for="TextInputField-2"
+                    >
+                      Password
+                       
+                      <span
+                        title="This field is required."
+                      >
+                        *
+                      </span>
+                    </label>
+                  </div>
+                  <input
+                    aria-invalid="false"
+                    class="css-12rdf6g ub-w_100prcnt ub-fnt-fam_b77syt ub-b-btm_1px-solid-transparent ub-b-lft_1px-solid-transparent ub-b-rgt_1px-solid-transparent ub-b-top_1px-solid-transparent ub-otln_iu2jf4 ub-txt-deco_none ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-ln-ht_16px ub-fnt-sze_12px ub-color_474d66 ub-pl_12px ub-pr_12px ub-tstn_n1akt6 ub-h_32px ub-bg-clr_white ub-b-btm-clr_d8dae5 ub-b-lft-clr_d8dae5 ub-b-rgt-clr_d8dae5 ub-b-top-clr_d8dae5 ub-f-wght_400 ub-ltr-spc_0 ub-box-szg_border-box"
+                    id="TextInputField-2"
+                    name="password"
+                    placeholder="password"
+                    required=""
+                    spellcheck="true"
+                    type="password"
+                    value=""
+                  />
+                </div>
+                <div
+                  class="modalButtons"
+                >
+                  <button
+                    class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                    type="button"
+                  >
+                    Log In
+                  </button>
+                  <button
+                    class="css-12b25td ub-pst_relative ub-f-wght_500 ub-dspl_inline-flex ub-algn-itms_center ub-flx-wrap_nowrap ub-just-cnt_center ub-txt-deco_none ub-ver-algn_middle ub-b-btm_1px-solid-c1c4d6 ub-b-lft_1px-solid-c1c4d6 ub-b-rgt_1px-solid-c1c4d6 ub-b-top_1px-solid-c1c4d6 ub-otln_iu2jf4 ub-usr-slct_none ub-crsr_pointer ub-wht-spc_nowrap ub-fnt-fam_b77syt ub-bblr_4px ub-bbrr_4px ub-btlr_4px ub-btrr_4px ub-color_474d66 ub-tstn_n1akt6 ub-h_32px ub-min-w_32px ub-fnt-sze_12px ub-ln-ht_32px ub-pl_16px ub-pr_16px ub-bg-clr_white ub-box-szg_border-box"
+                    type="button"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="isAuth"
+          hidden=""
+        >
+          <div
+            class="userAuth"
+            hidden=""
+          >
+            <svg
+              class="userIcon"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 16 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"
+              />
+            </svg>
+            <button
+              class="button"
+              type="button"
+            >
+              Log Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="main"
+    >
+      Loading...
+    </div>
+    <div
+      class="footer"
+    >
+      <div
+        class="footerContent"
+      >
+        <p>
+          © 2022 | All Rights Reserved | Developed by Wroclaw Mastery Team
+        </p>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

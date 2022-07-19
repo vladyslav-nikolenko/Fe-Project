@@ -1,5 +1,4 @@
 import ArticlesList from '../components/ArticlesList';
-import EventsMockData from '../pages/Events/events.json';
 
 export default {
   title: 'UI/ArticlesList',
@@ -28,7 +27,6 @@ export default {
     articles: {
       type: 'array',
       description: 'Миссив статтей',
-      defaultValue: EventsMockData,
       // options: ['true', 'false'],
       control: {
         type: 'radio'

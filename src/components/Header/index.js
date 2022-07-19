@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { ImUser } from 'react-icons/im';
 
 import HeaderLink from '../HeaderLink';
-import categories from '../../Constants/index';
+import categories from '../../Constants';
 import IdentificationModal from '../IdentificationModal';
 import UserContext from '../../UserContext';
 
@@ -22,10 +22,13 @@ function Header({ onLogin, onLogout }) {
           <div className={cn(style.markLogo)}>m</div>
           .news
         </div>
-        <div className={cn(style.headerCategories)}
-          display='flex'>
+        <div className={cn(style.headerCategories)} display='flex'>
           {categories.map((item, index) => {
             const active = item.url === location.pathname;
+
+            if (item.label === 'Admin' && !user) {
+              return null;
+            }
 
             return (
               <HeaderLink
@@ -33,31 +36,34 @@ function Header({ onLogin, onLogout }) {
                 index={index}
                 url={item.url}
                 label={item.label}
-                active={active} />
+                active={active}
+              />
             );
           })}
         </div>
         <div className={cn(style.userLogin)} hidden={user}>
-          <button className={cn(style.button)}
-            onClick={() => setVisible(true)}>Log In</button>
+          <button className={cn(style.button)} onClick={() => setVisible(true)}>
+            Log In
+          </button>
           <IdentificationModal
             show={modalLogIn}
             visible={() => setVisible(false)}
-            onLogin={onLogin} />
+            onLogin={onLogin}
+          />
         </div>
         <div className={cn(style.isAuth)} hidden={!user}>
-          <div hidden={!user} className={cn(style.userAuth)}><ImUser className={cn(style.userIcon)} />{user?.username}
+          <div hidden={!user} className={cn(style.userAuth)}>
+            <ImUser className={cn(style.userIcon)} />
+            {user?.username}
             {/* <div  ><ImUser /></div> */}
-            <button
-              className={cn(style.button)}
-              type='button' onClick={onLogout} >Log Out</button>
+            <button className={cn(style.button)} type='button' onClick={onLogout}>
+              Log Out
+            </button>
           </div>
         </div>
       </div>
     </div>
-
-
   );
-};
+}
 
 export default Header;

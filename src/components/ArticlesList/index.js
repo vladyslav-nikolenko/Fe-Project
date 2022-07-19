@@ -7,6 +7,7 @@ function ArticleList({
   articles,
   highlights = true,
   haveMore = false,
+  // haveMore = true,
   isLoading,
   onLoading
 }) {
@@ -43,12 +44,13 @@ function ArticleList({
         >
           {highlightsArrayPreview
             ? highlightsArrayPreview.map(
-              ({ category, title, content, image, url }, index) => (
+              ({ _id, category, title, content, image, url }, index) => (
                 <PreviewThumbnail
+                  id={_id}
                   key={index}
                   title={title}
                   category={category}
-                  picture={image}
+                  image={image}
                   spoiler={content}
                   type='thumbnail'
                   url={url}
@@ -56,20 +58,19 @@ function ArticleList({
               )) : null}
         </UnorderedList>
       </Pane>
-      {rowArrayPreview.map(({ category, title, content, image, url }, index) => (
+      {rowArrayPreview.map(({ category, title, content, image, url, _id }, index) => (
         <Pane
           key={index}
           width='1200px'
           paddingX='15px'
           paddingY='5px'
           marginX='auto'
-
-
         >
           <Preview
+            id={_id}
             title={title}
             category={category}
-            picture={image}
+            image={image}
             spoiler={content}
             type='full'
             url={url}

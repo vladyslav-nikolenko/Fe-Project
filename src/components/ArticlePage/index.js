@@ -1,29 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Heading, Image, Overlay, Pane, Paragraph } from 'evergreen-ui';
 
-import { Data } from '../Header/model';
+import CommentForm from '../CommentForm';
+import CommentList from '../CommentList';
+import { getArticleById } from '../../api/articles';
 
 function ArticlePage() {
-  const { title: titlePath } = useParams();
-  const element = Data.find(
-    item => item.title.replace(/\s/g, '-') === titlePath
-  );
+  const [article, setArticle] = useState(null);
+  const { id: titlePath } = useParams();
 
-  if (!element) {
-    // redirect 404
-  }
-  const { title, image, content, thumbnail } = element;
+
+  useEffect( () => {
+    getArticleById(titlePath).then(setArticle);
+  }, []);
+
   const [isShown, setIsShown] = useState(false);
 
+  if (!article) {
+    return <>Loading...</>;
+  }
+  const { title, image, content, thumbnail } = article;
+
   return (
-    <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
+      <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
       <Image
         display='block'
         width='900px'
         height='auto'
         borderRadius='4px'
-        src={image}
+        src={`images/${image}`}
         alt='article'
       />
       <Heading
@@ -41,7 +47,7 @@ function ArticlePage() {
       <Paragraph lineHeight='1.5' size={500}>
           <Image
               float='right'
-              src={thumbnail}
+              src={`images/${thumbnail}`}
               display='block'
               margin='10px'
               width='200px'
@@ -72,11 +78,15 @@ function ArticlePage() {
           paddingY='200px'
           marginX='auto'
           borderRadius='4px'
-          src={thumbnail}
+          src={`images/${thumbnail}`}
           alt='article'
         />
       </Overlay>
+      <CommentForm />
+        <CommentList />
     </Pane>
+
+
   );
 }
 

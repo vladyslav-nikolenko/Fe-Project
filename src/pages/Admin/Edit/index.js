@@ -3,11 +3,28 @@ import { Button, FilePicker, Pane, Textarea, TextInput } from 'evergreen-ui';
 
 function Edit() {
   return (
-    <Pane>
-      <TextInput />
+    <Pane
+      width='800px'
+    >
+      <TextInput
+        placeholder='Category'
+      />
+      <TextInput
+        width='800px'
+        marginY='10px'
+        placeholder='Title'
+      />
       <Textarea />
-      <FilePicker />
-      <Button>Edit</Button>
+      <FilePicker
+        placeholder='Main picture'
+      />
+      <FilePicker
+        marginY='10px'
+        placeholder='Additional picture'
+      />
+      <Button
+        type='button'
+      >Edit</Button>
     </Pane>
   );
 }
