@@ -2,14 +2,14 @@ import React from 'react';
 import { ListItem, Pane, Image, Text, Heading, Paragraph, Link, PeopleIcon } from 'evergreen-ui';
 
 function PreviewThumbnail({
+    id,
     category,
     title,
     spoiler,
-    picture,
-    comments = 24,
-    url
+    image,
+    comments = 24
     }) {
-    const path = title.replace(/\s/g, '-');
+    // const path = title.replace(/\s/g, '-');
     let cutTextThumbnail = spoiler.slice(0, 100);
 
     if (cutTextThumbnail.length < spoiler.length) {
@@ -20,7 +20,7 @@ function PreviewThumbnail({
         <Link
             size={500}
             color='neutral'
-            href={`/${path}`}>
+            href={`/${id}`}>
             <ListItem
                 maxWidth='250px'
                 height='320px'
@@ -43,7 +43,7 @@ function PreviewThumbnail({
                         width='250px'
                         height='auto'
                         borderRadius='4px'
-                        src={picture}
+                        src={`images/${image}`}
                         alt='article'
                     />
                 </Pane>
@@ -57,8 +57,9 @@ function PreviewThumbnail({
                     <Link
                         display='block'
                         size={500}
-                        href={url}
-                    >{category.label}
+                        href={`/${id}`}
+                    // >{category.label}
+                          >{category}
                     </Link>
                     <Pane display='flex'
                           justifyContent='flex-end'

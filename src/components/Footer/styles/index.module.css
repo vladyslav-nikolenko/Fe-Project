@@ -4,6 +4,7 @@
     width: 100wv;
     height: 80px;
     background-color: #edeff5;
+    position: sticky;
 }
 
 .footerContent {

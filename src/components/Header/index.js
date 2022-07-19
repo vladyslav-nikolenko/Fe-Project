@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { ImUser } from 'react-icons/im';
 
 import HeaderLink from '../HeaderLink';
-import categories from '../../Constants/index';
+import categories from '../../constants/index';
 import IdentificationModal from '../IdentificationModal';
 import UserContext from '../../UserContext';
 
@@ -26,6 +26,10 @@ function Header({ onLogin, onLogout }) {
           display='flex'>
           {categories.map((item, index) => {
             const active = item.url === location.pathname;
+
+            if (item.label === 'Admin' && !user) {
+              return null;
+            }
 
             return (
               <HeaderLink
@@ -58,6 +62,6 @@ function Header({ onLogin, onLogout }) {
 
 
   );
-};
+}
 
 export default Header;

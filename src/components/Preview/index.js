@@ -1,16 +1,17 @@
 import React from 'react';
 import { ListItem, Pane, Image, Text, Heading, Paragraph, Link, CommentIcon } from 'evergreen-ui';
 
-function Preview ({
+function Preview({
+  id,
   category,
   title,
   spoiler,
-  picture,
+  image,
   comments = 24,
   url,
   categoryVisibility = true }) {
 
-  const path = title.replace(/\s/g, '-');
+  // const path = title.replace(/\s/g, '-');
   const quantityOfSymbols = categoryVisibility ? 530 : 630;
   let cutText = spoiler.slice(0, quantityOfSymbols);
 
@@ -22,7 +23,7 @@ function Preview ({
       <Link
           size={500}
           color='neutral'
-          href={`/${path}`}>
+          href={`/${id}`}>
     <ListItem
       display='flex'
       height='auto'
@@ -34,8 +35,7 @@ function Preview ({
           height='auto'
           marginRight='20px'
           borderRadius='4px'
-
-          src={picture}
+          src={`images/${image}`}
           alt='article'
         />
       <Pane
@@ -56,7 +56,7 @@ function Preview ({
               display='block'
               size={500}
               href={url}
-            >{category.label}
+                >{category}
             </Link>
 
             <Pane
