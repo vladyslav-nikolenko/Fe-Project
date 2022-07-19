@@ -13,6 +13,7 @@
     "allowImportExportEverywhere": true
   },
   "rules": {
+    "no-template-curly-in-string": ["warn"],
     "react/no-array-index-key": 0,
     "react/button-has-type": 0,
     "react/react-in-jsx-scope": "off",
@@ -99,14 +100,7 @@
       "error",
       {
         "newlines-between": "always",
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ]
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
       }
     ],
     "import/no-named-as-default": 0

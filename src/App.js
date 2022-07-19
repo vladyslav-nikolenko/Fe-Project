@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from './components/Header';
 import All from './pages/All';
@@ -67,21 +62,9 @@ function App() {
           <Routes>
             <Route exact path='/' element={<All />} />
             <Route exact path='/all' element={<All />} />
-            <Route
-              exact
-              path='/people'
-              element={<All category='people' />}
-            />
-            <Route
-              exact
-              path='/places'
-              element={<All category='places' />}
-            />
-            <Route
-              exact
-              path='/events'
-              element={<All category='events' />}
-            />
+            <Route exact path='/people' element={<All category='people' />} />
+            <Route exact path='/places' element={<All category='places' />} />
+            <Route exact path='/events' element={<All category='events' />} />
             <Route path='/admin' element={<Admin user={user} />}>
               <Route path='create' element={<Create />} />
               <Route path='edit' element={<Edit />} />
