@@ -9,29 +9,26 @@ import {
 } from 'evergreen-ui';
 
 import UserContext from '../../../UserContext';
+import TextEditor from '../../../components/TextEditor';
 // import CATEGORIES from '../../../Constants';
 
 // import style from './index.module.css';
 
 function Create() {
   const { user } = useContext(UserContext);
-  const [articleData, updateArticleData] = useState({
+  const [articleData, setArticleData] = useState({
     category: '',
     title: '',
     content: '',
     user: user?.username,
-    image: null,
-    thumbnail: null
+    image: [],
+    thumbnail: []
   });
 
   function fetchData(body) {
     const formData = new FormData();
 
     formData.append('category', body.category);
-    // formData.append(
-    //   'categoryUrl',
-    //   CATEGORIES.find(({ label }) => label === body.category)?.url
-    // );
     formData.append('title', body.title);
     formData.append('content', body.content);
     formData.append('image', body.image);
@@ -50,12 +47,12 @@ function Create() {
       })
       .then(() => {
         console.log('Form added');
-        updateArticleData({
+        setArticleData({
           category: '',
           title: '',
           content: '',
-          image: '',
-          thumbnail: null
+          image: [],
+          thumbnail: []
         });
       })
       .catch(err => {
@@ -67,15 +64,72 @@ function Create() {
     fetchData(articleData);
   };
 
+
   const handleSubmit = e => {
     const field = e.target.name;
 
-    updateArticleData({ ...articleData, [field]: e.target.value });
+    setArticleData({ ...articleData, [field]: e.target.value });
+  };
+
+  const handleSubmitTextEditor = textEditorValue => {
+
+    setArticleData({ ...articleData, content: textEditorValue });
+    console.log(textEditorValue);
+  };
+
+  const handleSubmitFiles = e => {
+    const field = e.target.name;
+
+    setArticleData({ ...articleData, [field]: e.target.files[0] });
   };
 
   return (
     <form>
-      <Pane width='800px'>
+      <div>
+        <div>Select category</div>
+        <select name='category' value={articleData.category}
+          placeholder='Category' onChange={handleSubmit}>
+          <option value=''>Category</option>
+          <option value='People' >People </option>
+          <option value='Places' >Places</option>
+          <option value='Events' >Events</option>
+        </select>
+      </div>
+      <div>
+        <div>Title</div>
+        <input name='title' placeholder='Title'
+          value={articleData.title} onChange={handleSubmit} type='text' />
+      </div>
+      <div>Content</div>
+
+      <TextEditor
+        name='content'
+        required
+        value={articleData.content}
+        onChange={handleSubmitTextEditor}
+        type='text'
+      />
+
+      <div>
+        <div>Main picture</div>
+        <input accept='.jpg, .png' name='image' files={articleData.image} placeholder='Main picture'
+          // onChange={handleSubmit}
+          onChange={handleSubmitFiles}
+          type='file' />
+      </div>
+      <div>
+        <div>Additional picture</div>
+        <input accept='.jpg, .png' name='thumbnail' files={articleData.thumbnail} placeholder='Additional picture'
+          // onChange={handleSubmit}
+          onChange={handleSubmitFiles}
+          type='file' />
+      </div>
+      <div>
+        <button type='button' onClick={creteArticle}>
+          Create
+        </button>
+      </div>
+      {/* <Pane width='800px'>
         <Combobox
           // items={CATEGORIES.map(x => x.label)}
           items={['Places', 'People', 'Events']}
@@ -98,7 +152,8 @@ function Create() {
           onChange={handleSubmit}
           type='text'
         />
-        <Textarea
+        <TextEditor
+
           name='content'
           required
           value={articleData.content}
@@ -129,8 +184,52 @@ function Create() {
         <Button type='button' onClick={creteArticle}>
           Create
         </Button>
-      </Pane>
-    </form>
+
+      </Pane> */}
+      {/* <div>
+        <div>Select category</div>
+        <select name='category' value={articleData.category}
+          placeholder='Category' onChange={handleSubmit}>
+          <option value=''>Category</option>
+          <option value='People' >People </option>
+          <option value='Places' >Places</option>
+          <option value='Events' >Events</option>
+        </select>
+      </div>
+      <div>
+        <div>Title</div>
+        <input name='title' placeholder='Title'
+          value={articleData.title} onChange={handleSubmit} type='text' />
+      </div>
+      <div>
+        <div>Content</div>
+        <textarea name='content' value={articleData.content}
+          placeholder='Content' onChange={handleSubmit} type='text' />
+      </div>
+      <div>
+        <div>Main picture</div>
+        <input name='image' value={articleData.image} placeholder='Main picture'
+          onChange={handleSubmit}
+          // onChange={value => {
+          //   updateArticleData({ ...articleData, image: value[0] });
+          // }}
+          type='file' />
+      </div>
+      <div>
+        <div>Additional picture</div>
+        <input accept='.jpg, .png' name='thumbnail' value={articleData.thumbnail} placeholder='Additional picture'
+          onChange={handleSubmit}
+          // onChange={value => {
+          //   updateArticleData({ ...articleData, thumbnail: value[0] });
+          // }}
+          type='file' />
+      </div>
+      <div>
+        <button type='button' onClick={creteArticle}>
+          Create
+        </button>
+      </div> */}
+    </form >
   );
 }
 
