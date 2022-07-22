@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
+
 import 'react-quill/dist/quill.snow.css';
+import './index.css';
 
 
 function TextEditor({ value, onChange, name }) {
-
-    // const [textContent, setTextContent] = useState('');
-
-    // const handleSubmitTextEditor = e => {
-    //     setTextContent({ ...textContent, e });
-    // };
 
     return (
         <ReactQuill

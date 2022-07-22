@@ -11,7 +11,7 @@ function ArticlePage() {
   const { id: titlePath } = useParams();
 
 
-  useEffect( () => {
+  useEffect(() => {
     getArticleById(titlePath).then(setArticle);
   }, []);
 
@@ -23,7 +23,7 @@ function ArticlePage() {
   const { title, image, content, thumbnail } = article;
 
   return (
-      <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
+    <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
       <Image
         display='block'
         width='900px'
@@ -39,23 +39,23 @@ function ArticlePage() {
         width='900px'
         display='flex'
         float='top'
-        // border='2px solid blue'
+      // border='2px solid blue'
       >
         {title}
       </Heading>
 
       <Paragraph lineHeight='1.5' size={500}>
-          <Image
-              float='right'
-              src={`images/${thumbnail}`}
-              display='block'
-              margin='10px'
-              width='200px'
-              height='auto'
-              borderRadius='4px'
-              alt='article'
-              onClick={() => setIsShown(true)}
-          />
+        <Image
+          float='right'
+          src={`images/${thumbnail}`}
+          display='block'
+          margin='10px'
+          width='200px'
+          height='auto'
+          borderRadius='4px'
+          alt='article'
+          onClick={() => setIsShown(true)}
+        />
         {content}
       </Paragraph>
       <Overlay
@@ -83,7 +83,7 @@ function ArticlePage() {
         />
       </Overlay>
       <CommentForm />
-        <CommentList />
+      <CommentList />
     </Pane>
 
 

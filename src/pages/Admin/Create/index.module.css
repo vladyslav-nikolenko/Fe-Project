@@ -1,3 +1,128 @@
-.createForm {
+.createArticle {
     width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-decoration: none;
+    font-weight: bold;
+
 }
+
+.labelSelect {
+    margin: 5px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.selectCategory {
+    margin: 5px;
+    padding: 5px 10px;
+    width: 200px;
+    height: 30px;
+    text-decoration: none;
+    color: #1F3D99;
+    background-color: #edeff5;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.labelTitle {
+    margin: 5px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.inputTitleArticle {
+    margin: 5px;
+    padding: 5px 10px;
+    width: 750px;
+    height: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #1F3D99;
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* border-color: transparent; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.inputFile {
+    width: 20px;
+    height: 10px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.labelFile {
+    margin: 5px;
+    padding: 5px 10px;
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #1F3D99;
+    background-color: #edeff5;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* border-color: transparent; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.labelContent {
+    margin: 5px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.texEditorContent {
+    margin: 5px;
+    width: 750px;
+    min-width: 300px;
+    border-radius: 4px;
+}
+
+.btnCreateArticle {
+    margin: 5px;
+    padding: 5px 10px;
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+    text-decoration: none;
+    color: #1F3D99;
+    background-color: #ffffff;
+    border: 1px solid grey;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* border-color: transparent; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+
+/* .inputFile+label {
+    font-family: 'Roboto', sans-serif;
+    color: gray;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 4px;
+
+} */
