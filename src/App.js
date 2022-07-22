@@ -70,7 +70,7 @@ function App() {
               <Route path='create' element={<Create />} />
               <Route path='edit' element={<Edit />} />
             </Route>
-            <Route path='articles/:author' element={<Author />} />
+            <Route path='/articles/:author' element={<Author />} />
             <Route path='/:id' element={<ArticlePage />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>

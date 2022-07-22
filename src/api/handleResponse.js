@@ -1,17 +1,20 @@
 const token = localStorage.getItem('token');
 const initialHeaders = {
-    'Content-Type': 'application/json',
-    'token': token
+  'Content-Type': 'application/json',
+  token
 };
+const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 async function handleResponse(url, method = 'GET', headers = {}) {
-    const requestOptions = {
-        method,
-        headers: initialHeaders,
-        ...headers
+  const baseUrl = REACT_APP_BASE_SERVER_URL;
+  const requestOptions = {
+    method,
+    headers: initialHeaders,
+    ...headers
   };
 
   try {
+    const fullUrl = baseUrl + url;
     const response = await fetch(url, requestOptions);
     const result = await response.json();
 
@@ -20,8 +23,7 @@ async function handleResponse(url, method = 'GET', headers = {}) {
     console.log(error);
 
     return error;
-  };
-};
+  }
+}
 
 export default handleResponse;
-

@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Heading, Image, Menu, OrderedList, Pane, Text, UnorderedList } from 'evergreen-ui';
+import { Heading, Pane, UnorderedList } from 'evergreen-ui';
 import { useLocation } from 'react-router-dom';
 
 import { getArticleByAuthor } from '../../api/articles';
 import PreviewThumbnail from '../../components/PreviewThumbnail';
-
-const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 function Author() {
   const { pathname } = useLocation();
@@ -13,7 +11,12 @@ function Author() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    getArticleByAuthor(userPath).then(setArticles);
+    async function fethcData() {
+      const article = await getArticleByAuthor(userPath);
+
+      setArticles(article);
+    }
+    fethcData();
   }, []);
 
   return (
@@ -36,14 +39,13 @@ function Author() {
           marginBottom='-30px'
           justifyContent='space-between'
         >
-          {articles.map(({ title, category, image, content, url, _id }, index) => (
+          {articles.map(({ title, category, image, content, _id }, index) => (
             <PreviewThumbnail
               key={index}
               title={title}
               category={category}
               image={image}
               spoiler={content}
-              url={url}
               id={_id}
             />
           ))}
