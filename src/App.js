@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-
 import Header from './components/Header';
 import All from './pages/All';
 import Admin from './pages/Admin';
@@ -10,8 +9,6 @@ import Edit from './pages/Admin/Edit';
 import ArticlePage from './components/ArticlePage';
 import UserContext from './UserContext';
 import Footer from './components/Footer';
-
-
 
 const { REACT_APP_BASE_CLIENT_URL } = process.env;
 
