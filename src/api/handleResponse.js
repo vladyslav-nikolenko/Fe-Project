@@ -15,8 +15,10 @@ async function handleResponse(url, method = 'GET', headers = {}) {
 
   try {
     const fullUrl = baseUrl + url;
-    const response = await fetch(url, requestOptions);
+    const response = await fetch(fullUrl, requestOptions);
     const result = await response.json();
+
+    console.log(result);
 
     return result;
   } catch (error) {
