@@ -8,6 +8,8 @@ import style from './index.module.css';
 
 function Create() {
   const { user } = useContext(UserContext);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const [articleData, setArticleData] = useState({
     category: '',
     title: '',
@@ -38,6 +40,7 @@ function Create() {
         return Promise.reject(resp.json());
       })
       .then(() => {
+        setSuccess(true);
         console.log('Form added');
         setArticleData({
           category: '',
@@ -48,11 +51,13 @@ function Create() {
         });
       })
       .catch(err => {
+        setError(true);
         console.log(err);
       });
   }
 
-  const creteArticle = () => {
+  const creteArticle = e => {
+    e.preventDefault();
     fetchData(articleData);
     setArticleData({
       category: '',
@@ -84,7 +89,10 @@ function Create() {
 
   return (
     <form className={cn(style.createArticle)} >
-      <div div >
+      {success &&
+        <p className={cn(style.success)}>Your article will be published.</p>}
+      {error && <pt className={cn(style.error)}>Something was wrong. Please try again later.</pt>}
+      <div >
         <div className={cn(style.labelSelect)} >Select category</div>
         <select
           name='category'
@@ -119,6 +127,7 @@ function Create() {
 
       <div>
         <label className={cn(style.labelFile)} htmlFor='image'>Add main picture
+          <div className={cn(style.filePreview)}>{articleData.image.name}</div>
           <input id='image'
             required
             className={cn(style.inputFile)}
@@ -129,9 +138,11 @@ function Create() {
             onChange={handleSubmitFiles}
             type='file' />
         </label>
+
       </div>
-      <div>
+      <div className={cn(style.imageFile)} >
         <label className={cn(style.labelFile)} htmlFor='thumbnail'>Add additional picture
+          <div className={cn(style.filePreview)}>{articleData.thumbnail.name}</div>
           <input id='thumbnail'
             required
             className={cn(style.inputFile)}
@@ -147,6 +158,7 @@ function Create() {
           Create
         </button>
       </div>
+
     </form >
   );
 }

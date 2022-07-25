@@ -76,7 +76,7 @@ function App() {
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </UserContext.Provider>
   );
