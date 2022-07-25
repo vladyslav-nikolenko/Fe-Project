@@ -15,8 +15,10 @@ function Admin({ user }) {
       display='flex'
       flexWrap='wrap'
       marginY='20px'
+      marginX='0'
+      width='1000px'
       justifyContent='center'
-      height='500px'
+      height='350px'
     >
       <Button
         marginX='20px'

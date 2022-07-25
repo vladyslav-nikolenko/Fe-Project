@@ -41,7 +41,7 @@ function ArticlePage() {
         width='900px'
         display='flex'
         float='top'
-        // border='2px solid blue'
+      // border='2px solid blue'
       >
         {title}
       </Heading>
