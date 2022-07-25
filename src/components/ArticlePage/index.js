@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Heading, Image, Overlay, Pane, Paragraph } from 'evergreen-ui';
 
 import CommentForm from '../CommentForm';
@@ -10,7 +10,6 @@ function ArticlePage() {
   const [article, setArticle] = useState(null);
   const { id: titlePath } = useParams();
 
-
   useEffect(() => {
     getArticleById(titlePath).then(setArticle);
   }, []);
@@ -20,10 +19,13 @@ function ArticlePage() {
   if (!article) {
     return <>Loading...</>;
   }
-  const { title, image, content, thumbnail } = article;
+  const { title, image, content, thumbnail, user } = article;
 
   return (
     <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
+      <Paragraph color='#808080'>
+        Author: <Link to={`/articles/${user}`}>{user}</Link>
+      </Paragraph>
       <Image
         display='block'
         width='900px'
@@ -85,8 +87,6 @@ function ArticlePage() {
       <CommentForm />
       <CommentList />
     </Pane>
-
-
   );
 }
 

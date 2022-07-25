@@ -13,7 +13,7 @@ metadata:
   namespace: news-client-dev
 spec:
   rules:
-  - host: news.tools.godeltech.com
+  - host: news.dev.tools.godeltech.com
     http:
       paths:
       - backend:
