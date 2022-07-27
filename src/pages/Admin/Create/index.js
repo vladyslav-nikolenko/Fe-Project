@@ -1,37 +1,28 @@
 import React, { useContext, useState } from 'react';
-import {
-  Button,
-  Combobox,
-  FilePicker,
-  Pane,
-  Textarea,
-  TextInput
-} from 'evergreen-ui';
+import cn from 'classnames';
 
 import UserContext from '../../../UserContext';
-// import CATEGORIES from '../../../Constants';
+import TextEditor from '../../../components/TextEditor';
 
-// import style from './index.module.css';
+import style from './index.module.css';
 
 function Create() {
   const { user } = useContext(UserContext);
-  const [articleData, updateArticleData] = useState({
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [articleData, setArticleData] = useState({
     category: '',
     title: '',
     content: '',
     user: user?.username,
-    image: null,
-    thumbnail: null
+    image: [],
+    thumbnail: []
   });
 
   function fetchData(body) {
     const formData = new FormData();
 
     formData.append('category', body.category);
-    // formData.append(
-    //   'categoryUrl',
-    //   CATEGORIES.find(({ label }) => label === body.category)?.url
-    // );
     formData.append('title', body.title);
     formData.append('content', body.content);
     formData.append('image', body.image);
@@ -49,88 +40,126 @@ function Create() {
         return Promise.reject(resp.json());
       })
       .then(() => {
+        setSuccess(true);
         console.log('Form added');
-        updateArticleData({
+        setArticleData({
           category: '',
           title: '',
           content: '',
-          image: '',
-          thumbnail: null
+          image: [],
+          thumbnail: []
         });
       })
       .catch(err => {
+        setError(true);
         console.log(err);
       });
   }
 
-  const creteArticle = () => {
+  const creteArticle = e => {
+    e.preventDefault();
     fetchData(articleData);
+    setArticleData({
+      category: '',
+      title: '',
+      content: '',
+      user: user?.username,
+      image: [],
+      thumbnail: []
+    });
   };
+
 
   const handleSubmit = e => {
     const field = e.target.name;
 
-    updateArticleData({ ...articleData, [field]: e.target.value });
+    setArticleData({ ...articleData, [field]: e.target.value });
+  };
+
+  const handleSubmitTextEditor = textEditorValue => {
+
+    setArticleData({ ...articleData, content: textEditorValue });
+  };
+
+  const handleSubmitFiles = e => {
+    const field = e.target.name;
+
+    setArticleData({ ...articleData, [field]: e.target.files[0] });
   };
 
   return (
-    <form>
-      <Pane width='800px'>
-        <Combobox
-          // items={CATEGORIES.map(x => x.label)}
-          items={['Places', 'People', 'Events']}
+    <form className={cn(style.createArticle)} >
+      {success &&
+        <p className={cn(style.success)}>Your article will be published.</p>}
+      {error && <pt className={cn(style.error)}>Something was wrong. Please try again later.</pt>}
+      <div >
+        <div className={cn(style.labelSelect)} >Select category</div>
+        <select
           name='category'
-          placeholder='Category'
-          required
-          value={articleData.category}
-          onChange={value => {
-            updateArticleData({ ...articleData, category: value });
-          }}
-          type='text'
-        />
-        <TextInput
+          required value={articleData.category}
+          className={cn(style.selectCategory)}
+          placeholder='Category' onChange={handleSubmit}>
+          <option value=''>Category</option>
+          <option value='People' >People </option>
+          <option value='Places' >Places</option>
+          <option value='Events' >Events</option>
+        </select>
+      </div >
+      <div>
+        <div className={cn(style.labelTitle)}>Title</div>
+        <input
           name='title'
-          width='800px'
-          marginY='10px'
-          placeholder='Title'
           required
-          value={articleData.title}
-          onChange={handleSubmit}
-          type='text'
-        />
-        <Textarea
+          className={cn(style.inputTitleArticle)}
+          placeholder='Title'
+          value={articleData.title} onChange={handleSubmit} type='text' />
+      </div>
+      <div className={cn(style.labelContent)}>Content</div>
+      <div className={cn(style.texEditorContent)}>
+        <TextEditor
           name='content'
           required
           value={articleData.content}
-          onChange={handleSubmit}
+          onChange={handleSubmitTextEditor}
           type='text'
         />
-        <FilePicker
-          name='image'
-          required
-          placeholder='Main picture'
-          value={articleData.image}
-          onChange={value => {
-            // console.log(value[0]);
-            updateArticleData({ ...articleData, image: value[0] });
-          }}
-          type='file'
-        />
-        <FilePicker
-          name='thumbnail'
-          marginY='10px'
-          placeholder='Additional picture'
-          value={articleData.thumbnail}
-          onChange={value => {
-            updateArticleData({ ...articleData, thumbnail: value[0] });
-          }}
-          type='file'
-        />
-        <Button type='button' onClick={creteArticle}>
+      </div>
+
+      <div>
+        <label className={cn(style.labelFile)} htmlFor='image'>Add main picture
+          <div className={cn(style.filePreview)}>{articleData.image.name}</div>
+          <input id='image'
+            required
+            className={cn(style.inputFile)}
+            accept='.jpg, .png' name='image'
+            files={articleData.image}
+            placeholder='Main picture'
+
+            onChange={handleSubmitFiles}
+            type='file' />
+        </label>
+
+      </div>
+      <div className={cn(style.imageFile)} >
+        <label className={cn(style.labelFile)} htmlFor='thumbnail'>Add additional picture
+          <div className={cn(style.filePreview)}>{articleData.thumbnail.name}</div>
+          <input id='thumbnail'
+            required
+            className={cn(style.inputFile)}
+            accept='.jpg, .png'
+            name='thumbnail' files={articleData.thumbnail}
+            placeholder='Additional picture'
+            onChange={handleSubmitFiles}
+            type='file' />
+        </label>
+      </div>
+      <div>
+        <button className={cn(style.btnCreateArticle)} type='submit' onClick={creteArticle}>
           Create
-        </Button>
-      </Pane>
-    </form>
+        </button>
+      </div>
+
+    </form >
   );
 }
 

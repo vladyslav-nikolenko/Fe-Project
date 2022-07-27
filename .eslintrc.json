@@ -13,6 +13,7 @@
     "allowImportExportEverywhere": true
   },
   "rules": {
+    "no-underscore-dangle":"off",
     "no-template-curly-in-string": ["warn"],
     "react/no-array-index-key": 0,
     "react/button-has-type": 0,
