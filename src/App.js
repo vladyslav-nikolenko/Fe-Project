@@ -9,6 +9,7 @@ import Edit from './pages/Admin/Edit';
 import ArticlePage from './components/ArticlePage';
 import UserContext from './UserContext';
 import Footer from './components/Footer';
+import CommentsApproval from './components/CommentsApproval';
 
 const { REACT_APP_BASE_CLIENT_URL } = process.env;
 
@@ -70,6 +71,7 @@ function App() {
               <Route path='edit' element={<Edit />} />
             </Route>
             <Route path='/:id' element={<ArticlePage />} />
+            <Route path='/commentsapproval' element={<CommentsApproval />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </div>
