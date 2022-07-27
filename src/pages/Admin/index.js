@@ -1,4 +1,4 @@
-import { Button, Pane, Tab, TabNavigation } from 'evergreen-ui';
+import { Button, Pane } from 'evergreen-ui';
 import React from 'react';
 import { NavLink, Link, Outlet } from 'react-router-dom';
 
@@ -41,7 +41,7 @@ function Admin({ user }) {
         width='90px'
         marginY='15px'
       >
-        <NavLink to='edit'>Comments</NavLink>
+        <NavLink to='/commentsapproval'>Comments</NavLink>
       </Button>
       <Outlet />
     </Pane >
