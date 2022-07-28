@@ -1,14 +1,14 @@
-import { Link } from 'evergreen-ui';
+import React from 'react';
 
-function HeaderLink({ index, url, label, active }) {
-    const color = active ? '' : 'neutral';
+import { HeaderNavigationItem } from './index.style';
+
+function HeaderLink({ index, url, label }) {
 
     return (
-
-        <Link
+        <HeaderNavigationItem
             key={index}
-            href={url}>{label}
-        </Link>
+            to={url}>{label}
+        </HeaderNavigationItem>
     );
 }
 

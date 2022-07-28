@@ -1,92 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Heading, Image, Overlay, Pane, Paragraph } from 'evergreen-ui';
+import { useParams } from 'react-router-dom';
 
+import Container from '../Container';
+import Loader from '../Loader';
+import Modal from '../Modal';
 import CommentForm from '../CommentForm';
 import CommentList from '../CommentList';
 import { getArticleById } from '../../api/articles';
 
+import {
+  ArticlePageStyled,
+  ArticleImage,
+  ArticleTitle,
+  ArticleText,
+  ArticleImageThumbnail,
+  Image
+} from './index.style';
+
 function ArticlePage() {
   const [article, setArticle] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const { id: titlePath } = useParams();
 
-  useEffect(() => {
+  useEffect( () => {
     getArticleById(titlePath).then(setArticle);
   }, []);
 
-  const [isShown, setIsShown] = useState(false);
+  // const [isShown, setIsShown] = useState(false);
 
   if (!article) {
-    return <>Loading...</>;
+    return <Loader/>;
   }
   const { title, image, content, thumbnail, user } = article;
 
   return (
-    <Pane width='900px' paddingX='15px' marginX='auto' marginY='40px'>
-      <Paragraph color='#808080'>
-        Author: <Link to={`/articles/${user}`}>{user}</Link>
-      </Paragraph>
-      <Image
-        display='block'
-        width='900px'
-        height='auto'
-        borderRadius='4px'
-        src={`images/${image}`}
-        alt='article'
-      />
-      <Heading
-        textTransform='uppercase'
-        marginY='50px'
-        height='auto'
-        width='900px'
-        display='flex'
-        float='top'
-      // border='2px solid blue'
-      >
-        {title}
-      </Heading>
-
-      <Paragraph lineHeight='1.5' size={500}>
-        <Image
-          float='right'
-          src={`images/${thumbnail}`}
-          display='block'
-          margin='10px'
-          width='200px'
-          height='auto'
-          borderRadius='4px'
-          alt='article'
-          onClick={() => setIsShown(true)}
-        />
-        {content}
-      </Paragraph>
-      <Overlay
-        isShown={isShown}
-        onExit={() => setIsShown(false)}
-        preventBodyScrolling
-        containerProps={{
-          display: 'flex',
-          flex: '1',
-          flexDirection: 'column'
-        }}
-      >
-        <Image
-          zIndex={1}
-          flexShrink={0}
-          elevation={0}
-          width='50vw'
-          height='auto'
-          // paddingX='15px'
-          paddingY='200px'
-          marginX='auto'
-          borderRadius='4px'
-          src={`images/${thumbnail}`}
-          alt='article'
-        />
-      </Overlay>
+    <Container>
+      <ArticlePageStyled>
+        <ArticleImage
+          src={`images/${image}`} alt='article' />
+            <ArticleTitle>{title}</ArticleTitle>
+              <ArticleText>
+                <ArticleImageThumbnail
+                  src={`images/${thumbnail}`}
+                  alt='article'
+                  onClick={() => setShowModal(true)} />{content}
+        </ArticleText>
+        {showModal && (
+          <Modal onClose={() => setShowModal(false)}>
+            <Image
+              src={`images/${thumbnail}`}
+              alt='Large'
+              onLoad={() => setIsLoaded(true)}/>
+          </Modal>
+      )}
       <CommentForm />
-      <CommentList />
-    </Pane>
+        <CommentList />
+      </ArticlePageStyled>
+      </Container>
   );
 }
 

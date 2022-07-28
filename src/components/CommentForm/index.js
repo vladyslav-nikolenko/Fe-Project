@@ -3,8 +3,13 @@ import { useParams } from 'react-router-dom';
 
 import { addComment } from '../../api/comments';
 
-
-import s from './CommentForm.module.css';
+import {
+  CommentFormStyled,
+  CommentFormLabel,
+  CommentFormTextarea,
+  AddCommentBtn,
+  Message
+} from './index.style';
 
 function CommentForm() {
   const { id } = useParams();
@@ -36,31 +41,15 @@ function CommentForm() {
   };
 
   return (
-    <form className={s.form}
-      action='submit'
-      onSubmit={handleSubmit}
-    >
-      <label className={s.label}
-        htmlFor='text'>
-        <p className={s.feedback}>Leave your comment here !</p>
-        <textarea
-          className={s.textarea}
-          value={comment}
-          name='comment'
-          id='text'
-          rows='10'
-          placeholder='Type your comment here...'
-          onChange={handleChange}
-        />
-      </label>
-      <button className={s.button}
-        type='submit'>Add comments
-      </button>
+        <CommentFormStyled id='comments' action='submit'onSubmit={handleSubmit}>
+          <CommentFormLabel htmlFor='text'>Leave your comment here !
+            <CommentFormTextarea value={comment} onChange={handleChange}/>
+          </CommentFormLabel>
+      <AddCommentBtn />
       {isSuccess &&
-        // eslint-disable-next-line max-len
-        <p className={s.success}>Your comment will be published after approving by administrator.</p>}
-      {error && <p className={s.error}>Something was wrong. Please try again later.</p>}
-    </form>
+        <Message>Your comment will be published after approving by administrator.</Message>}
+      {error && <Message>Something was wrong. Please try again later.</Message>}
+    </CommentFormStyled>
     );
 };
 

@@ -49,16 +49,7 @@ function App() {
   return (
     <UserContext.Provider value={value}>
       <Router>
-        <Header
-          onLogin={(token, user) => {
-            setToken(token);
-            setUser(user);
-          }}
-          onLogout={() => {
-            setToken(null);
-            setUser(null);
-          }}
-        />
+        <Header/>
 
         <div className='main'>
           <Routes>

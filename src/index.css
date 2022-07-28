@@ -1,4 +1,120 @@
-@import-normalize;
+/* variables */
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-100: #F2F1F0;
+  --color-gray-200: #696969;
+  --color-gray-300: #696F8C;
+/*
+  --color-gray-200: #CCCCCC;
+  --color-gray-300: #B2B2B2;
+  --color-gray-400: #999999;
+  --color-gray-text: #808080;
+  --color-gray-logo:  #696F8C; */
+  --color-blue-400: #eef8fb;
+  --color-blue-100: #78abe0;
+  --color-blue-200: #3f51b5;
+  --color-blue-300: #1F3D99;
+  --overlay-color: rgb(0 0 0 / 30%);
+  --shadow: -1px 4px 74px -16px rgb(0 0 0 / 15%);
+
+  --font-size-100: 14px;
+  --font-size-200: 16px;
+  --font-size-300: 18px;
+  --font-size-400: 24px;
+  --font-size-500: 32px;
+  --font-size-600: 36px;
+  --font-size-700: 40px;
+}
+
+:focus,
+:focus-visible {
+  outline: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: var(--color-black);
+  font-size: var(--font-size-200);
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
+  background-color: var(--color-white);
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+select {
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+/*
+font-family: 'Open Sans',
+sans-serif; */
+
+
+
+
+
+/* My styles *****************************************/
+/* @import-normalize;
 
 body {
   margin: 0;
@@ -11,15 +127,7 @@ body {
 
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
+
 
 ul {
   margin: 0;
@@ -44,4 +152,4 @@ img {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
