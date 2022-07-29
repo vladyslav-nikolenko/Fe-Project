@@ -5,15 +5,22 @@ import HeaderLink from '../HeaderLink';
 import UserContext from '../../UserContext';
 import CATEGORIES from '../../constants';
 
-import { HeaderNavigationStyled } from './index.style';
+import { StyledHeaderNavigation } from './index.style';
 
-function HeaderNavigation() {
+function HeaderNavigation({
+  visibleNav = false,
+  flexDirection = false,
+  handlerLink=null
+}) {
 const { pathname } = useLocation();
 const { user } = useContext(UserContext);
 
   return (
     <nav>
-      <HeaderNavigationStyled visibleNav>
+      <StyledHeaderNavigation
+        visibleNav={visibleNav}
+        flexDirection={flexDirection}
+      >
         {CATEGORIES.map((item, index) => {
           const active = item.url === pathname;
 
@@ -28,9 +35,10 @@ const { user } = useContext(UserContext);
               url={item.url}
               label={item.label}
               active={active}
+              handlerLink={handlerLink}
               />
             );})}
-      </HeaderNavigationStyled>
+      </StyledHeaderNavigation>
     </nav>
   );
   ;

@@ -5,7 +5,7 @@ import device from '../../constants/device';
 
 const { tablet } = device;
 
-export const PreviewThumbnailList = styled.ul`
+export const StyledPreviewThumbnailList = styled.ul`
     list-style: none;
     padding: 20px 0px;
     margin: 0;
@@ -16,11 +16,10 @@ export const PreviewThumbnailList = styled.ul`
     margin-left: -30px;
     margin-bottom: -30px;
     justify-content: space-between;
-    border: 1px solid black;
   }
 `;
 
-export const PreviewList = styled.ul`
+export const StyledPreviewList = styled.ul`
   padding: 20px 0px;
   margin: 0;
   justify-content: space-between;
@@ -31,7 +30,7 @@ export const LoadMoreBtn = styled(Button).attrs({
   text: 'Load More'
 })`
   display: block;
-  margin: 0  auto 10px;
+  margin: 0  auto 20px;
   min-width: 200px;
   text-align: center;
   line-height: 26px;

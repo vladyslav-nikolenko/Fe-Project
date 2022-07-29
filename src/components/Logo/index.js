@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { StyledLogo, LogoAccent } from './index.style';
+import {
+  StyledLogo,
+  LogoAccent
+} from './index.style';
 
 function Logo() {
 

@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-export const CommentItemStyled = styled.li`
-  padding: 10px 0px;
-
+export const StyledCommentItem = styled.li`
   &:not(:last-child) {
+    margin-bottom: 10px;
     border-bottom: 1px solid var(--color-blue-100);
   }
 `;

@@ -9,12 +9,14 @@ import CommentList from '../CommentList';
 import { getArticleById } from '../../api/articles';
 
 import {
-  ArticlePageStyled,
+  StyledArticlePage,
+  AuthorName,
+  AuthorLink,
   ArticleImage,
   ArticleTitle,
   ArticleText,
   ArticleImageThumbnail,
-  Image
+  ImageInModal
 } from './index.style';
 
 function ArticlePage() {
@@ -27,8 +29,6 @@ function ArticlePage() {
     getArticleById(titlePath).then(setArticle);
   }, []);
 
-  // const [isShown, setIsShown] = useState(false);
-
   if (!article) {
     return <Loader/>;
   }
@@ -36,7 +36,11 @@ function ArticlePage() {
 
   return (
     <Container>
-      <ArticlePageStyled>
+      <StyledArticlePage>
+        <AuthorName>Author:
+          <AuthorLink
+            href={`/articles/${user}`}>{user}</AuthorLink>
+        </AuthorName>
         <ArticleImage
           src={`images/${image}`} alt='article' />
             <ArticleTitle>{title}</ArticleTitle>
@@ -48,16 +52,16 @@ function ArticlePage() {
         </ArticleText>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
-            <Image
+            <ImageInModal
               src={`images/${thumbnail}`}
               alt='Large'
               onLoad={() => setIsLoaded(true)}/>
           </Modal>
       )}
-      <CommentForm />
+        <CommentForm />
         <CommentList />
-      </ArticlePageStyled>
-      </Container>
+      </StyledArticlePage>
+    </Container>
   );
 }
 

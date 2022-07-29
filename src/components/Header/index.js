@@ -1,5 +1,4 @@
-import React, { useState }  from 'react';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import React  from 'react';
 
 import Container from '../Container';
 import Logo from '../Logo';
@@ -9,31 +8,17 @@ import MobileMenu from '../MobileMenu';
 
 import {
   StyledHeader,
-  Wrapper,
-  MobileMenuOpenBtn
-  // Wrapper1
+  Wrapper
 } from './index.style';
 
 function Header() {
-  const [modalActive, setModalActive] = useState(false);
-
-  console.log('modalActive',modalActive);
-
 
 return (
     <StyledHeader>
       <Container>
-      <Wrapper>
+        <Wrapper>
           <Logo />
-          <MobileMenuOpenBtn type='button' onClick={() =>setModalActive(true)}>
-          <GiHamburgerMenu size='1.8em' fill='var( --color-blue-300)' />
-          </MobileMenuOpenBtn>
-        {modalActive
-          ? <MobileMenu
-            active={modalActive}
-            setActive={setModalActive}
-            />
-          : null}
+            <MobileMenu />
               <HeaderNavigation />
                 <HeaderAuth />
           </Wrapper>

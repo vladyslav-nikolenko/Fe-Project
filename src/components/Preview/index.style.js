@@ -6,7 +6,6 @@ const { desktop } = device;
 
 export const StyledPreview = styled.li`
   display:  flex;
-  border: 1px solid red;
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -22,15 +21,19 @@ export const PreviewImage = styled.img`
     height: auto;
     margin-right: 30px;
     border-radius: 4px;
-    border: 1px solid tomato;
   }
+`;
+
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 `;
 
 export const ContainerWithCategory = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  border: 2px solid black;
 `;
 
 export const CategoryWrapper = styled.div`
@@ -38,7 +41,6 @@ export const CategoryWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  border: 2px solid pink;
 `;
 
 export const Category = styled.a`
@@ -100,12 +102,6 @@ export const ContainerWithoutCategory = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
-export const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  `;
 
 export const PreviewContent = styled.p`
   font-weight: 400;

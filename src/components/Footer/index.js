@@ -1,25 +1,25 @@
 import React from 'react';
 
 import {
-    FooterStyled,
-    IconHeart,
+    StyledFooter,
+    FooterText,
+    TextContainer,
     IconContainer,
-    Text,
-    TextContainer
+    IconHeart
 } from './index.style';
 
 function Footer() {
     return (
-        <FooterStyled>
-            <Text>© 2022 | All Rights Reserved |</Text>
-            <TextContainer>
-            <IconContainer>
-                <Text>Developed with</Text>
-                <IconHeart />
-            </IconContainer>
-                <Text>by Wroclaw Mastery Team</Text>
+        <StyledFooter>
+            <FooterText>© 2022 | All Rights Reserved |</FooterText>
+                <TextContainer>
+                    <IconContainer>
+                        <FooterText>Developed with</FooterText>
+                        <IconHeart />
+                    </IconContainer>
+                    <FooterText>by Wroclaw Mastery Team</FooterText>
                 </TextContainer>
-        </FooterStyled>
+        </StyledFooter>
     );
 };
 

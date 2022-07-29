@@ -1,5 +1,4 @@
 const device = {
-  mobileSmallEnd: '(max-width: 479px)',
   mobile: '(min-width: 480px)',
   mobileEnd: '(max-width: 767px)',
   tablet: '(min-width: 768px)',

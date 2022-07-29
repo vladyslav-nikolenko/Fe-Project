@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { HeaderNavigationItem } from './index.style';
+import { StyledHeaderNavigationItem } from './index.style';
 
-function HeaderLink({ index, url, label }) {
+function HeaderLink({ index, url, label,handlerLink }) {
 
     return (
-        <HeaderNavigationItem
+        <StyledHeaderNavigationItem
+            onClick={handlerLink}
             key={index}
             to={url}>{label}
-        </HeaderNavigationItem>
+        </StyledHeaderNavigationItem>
     );
 }
 

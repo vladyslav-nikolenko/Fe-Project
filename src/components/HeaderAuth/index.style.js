@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
+import Button from '../Button';
 import device from '../../constants/device';
 
 const { tablet, desktop } = device;
 
-export const HeaderAuthStyled = styled.div`
-  display: none;
-  ${'' /* display: ${props => props.visible ? 'flex' : 'none'}; */}
+export const StyledHeaderAuth = styled.div`
+  display: ${props => props.visibleAuth ? 'flex' : 'none'};
+  flex-direction: ${props => props.flexDirection ? 'column' : 'none'};
 
   @media screen and ${tablet} {
     display: flex;
@@ -22,19 +23,26 @@ export const HeaderAuthStyled = styled.div`
 
 export const UserProfileWrapper = styled.div`
     display: flex;
-    ${'' /* margin-left: 5px; */}
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     align-items: center;
     font-weight: 400;
-    font-size: var(--font-size-300);
+    font-size: var(--font-size-400);
     color: var(--color-gray-300);
 
-  @media screen and ${desktop} {
+  @media screen and ${tablet} {
     margin-right: 5px;
     margin-bottom: 0px;
+    font-weight: 400;
+    font-size: var(--font-size-300);
   }
 `;
 
 export const UserProfile = styled.div`
   margin-left: 5px;
+`;
+
+export const AuthBtn = styled(Button).attrs({
+  type: 'button'
+})`
+  max-width: 200px;
 `;

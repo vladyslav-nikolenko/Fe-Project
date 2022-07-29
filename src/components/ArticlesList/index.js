@@ -5,16 +5,15 @@ import Preview from '../Preview';
 import PreviewThumbnail from '../PreviewThumbnail';
 
 import {
-  PreviewThumbnailList,
-  PreviewList,
+  StyledPreviewThumbnailList,
+  StyledPreviewList,
   LoadMoreBtn
 } from './index.style';
 
 function ArticleList({
   articles,
   highlights = true,
-  // haveMore = false,
-  haveMore = true,
+  haveMore = false,
   isLoading,
   onLoading
 }) {
@@ -35,7 +34,7 @@ function ArticleList({
 
   return (
     <Container>
-      <PreviewThumbnailList>
+      <StyledPreviewThumbnailList>
         {highlightsArrayPreview
           ? highlightsArrayPreview.map(
             ({ _id, category, title, content, image, url }, index) => (
@@ -49,9 +48,8 @@ function ArticleList({
                 type='thumbnail'
                 url={url} />))
           : null}
-        </PreviewThumbnailList>
-
-      <PreviewList>
+        </StyledPreviewThumbnailList>
+        <StyledPreviewList>
           {rowArrayPreview.map(({ category, title, content, image, url, _id }, index) => (
             <Preview
               id={_id}
@@ -64,10 +62,10 @@ function ArticleList({
               url={url}
               categoryVisibility={categoryVisibility} />
           ))}
-      </PreviewList>
+      </StyledPreviewList>
         {haveMore
           ? (<LoadMoreBtn onClick={onLoading} />)
-        : null}
+          : null}
       </Container>
   );
 }

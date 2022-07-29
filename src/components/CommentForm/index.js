@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { addComment } from '../../api/comments';
 
 import {
-  CommentFormStyled,
+  StyledCommentForm,
   CommentFormLabel,
   CommentFormTextarea,
   AddCommentBtn,
@@ -41,15 +41,20 @@ function CommentForm() {
   };
 
   return (
-        <CommentFormStyled id='comments' action='submit'onSubmit={handleSubmit}>
-          <CommentFormLabel htmlFor='text'>Leave your comment here !
-            <CommentFormTextarea value={comment} onChange={handleChange}/>
+    <StyledCommentForm
+      id='comments'
+      action='submit'
+      onSubmit={handleSubmit}>
+        <CommentFormLabel
+          htmlFor='text'>Leave your comment here !
+        <CommentFormTextarea
+          value={comment} onChange={handleChange} />
           </CommentFormLabel>
-      <AddCommentBtn />
+          <AddCommentBtn />
       {isSuccess &&
         <Message>Your comment will be published after approving by administrator.</Message>}
       {error && <Message>Something was wrong. Please try again later.</Message>}
-    </CommentFormStyled>
+    </StyledCommentForm>
     );
 };
 

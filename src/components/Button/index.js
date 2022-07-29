@@ -1,7 +1,7 @@
-import { ButtonStyled } from './index.styles';
+import { StyledButton } from './index.styles';
 
 function Button({ text = 'Button', ...attrs }) {
-  return <ButtonStyled {...attrs}>{text}</ButtonStyled>;
+  return <StyledButton {...attrs}>{text}</StyledButton>;
 }
 
 export default Button;

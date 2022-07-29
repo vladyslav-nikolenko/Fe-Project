@@ -11,8 +11,6 @@ export const StyledContainer = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  border: 1px solid red;
-
   @media screen and ${mobile} {
     width: 480px;
   }

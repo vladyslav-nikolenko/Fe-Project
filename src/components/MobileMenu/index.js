@@ -1,30 +1,32 @@
-import React from 'react';
-import { VscClose } from 'react-icons/vsc';
+import React, { useState }  from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
-import HeaderNavigation from '../HeaderNavigation';
-import HeaderAuth from '../HeaderAuth';
+import MobileMenuWindow from '../MobileMenuWindow';
 
 import {
-  MobileMenuStyled,
-  MobileMenuContainer,
-  MobileMenuCloseBtn
+  StyledMobileMenu,
+  MobileMenuOpenBtn
 } from './index.style';
 
-function MobileMenu({ setActive }) {
-  // const [modalActive, setModalActive] = useState(false);
+function MobileMenu() {
+  const [modalActive, setModalActive] = useState(false);
 
   return (
-
-  <MobileMenuStyled >
-    <MobileMenuCloseBtn type ='button' onClick={() => setActive(false)}>
-        <VscClose size='2em' fill='var( --color-blue-300)'/>
-      </MobileMenuCloseBtn>
-        <MobileMenuContainer>
-        <HeaderNavigation style={{ display: 'flex', flexDirection: 'column' } } />
-        <HeaderNavigation  visible />
-        <HeaderAuth visible />
-    </MobileMenuContainer>
-      </MobileMenuStyled>
+    <StyledMobileMenu>
+      <MobileMenuOpenBtn
+        type='button'
+        onClick={() => setModalActive(true)}>
+        <GiHamburgerMenu
+          size='1.8em'
+          fill='var( --color-blue-300)' />
+      </MobileMenuOpenBtn>
+        {modalActive &&
+          <MobileMenuWindow
+            active={modalActive}
+            setActive={setModalActive}
+            handlerLink={()=>setModalActive(false)}
+        />}
+      </StyledMobileMenu>
   );
 }
 

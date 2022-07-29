@@ -5,17 +5,21 @@ import device from '../../constants/device';
 
 const { tablet } = device;
 
-export const FooterStyled = styled.footer`
-  width: 100vw;
-  ${'' /* position: fixed; */}
+export const StyledFooter = styled.footer`
+  width: 100%;
   bottom: 0;
   padding: 20px;
   text-align: center;
   background-color: var(--color-gray-300);
 `;
 
-export const TextContainer = styled.div`
+export const FooterText = styled.p`
+  font-weight: 400;
+  font-size: var(--font-size-300);
+  color: var(--color-white);
+`;
 
+export const TextContainer = styled.div`
   @media screen and ${tablet} {
     display: flex;
     justify-content: center;
@@ -26,12 +30,6 @@ export const IconContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Text = styled.p`
-  font-weight: 400;
-  font-size: var(--font-size-300);
-  color: var(--color-white);
 `;
 
 const heartbeat = keyframes`

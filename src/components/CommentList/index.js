@@ -5,7 +5,7 @@ import CommentItem from '../CommentItem';
 import { getCommentsByArticleId } from '../../api/comments';
 
 import {
-  CommentListStyled,
+  StyledCommentList,
   CommentListTitle
 } from './index.style';
 
@@ -23,7 +23,7 @@ function CommentList() {
   }
 
   return (
-      <CommentListStyled>
+      <StyledCommentList>
       {!comments.length
         ?
           <div>
@@ -43,7 +43,7 @@ function CommentList() {
             ))}
           </div>
         }
-      </CommentListStyled>
+      </StyledCommentList>
     );
   ;
 };

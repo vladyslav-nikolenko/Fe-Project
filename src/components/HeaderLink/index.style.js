@@ -1,13 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const HeaderNavigationItem = styled(NavLink)`
+import device from '../../constants/device';
+
+const {  tablet } = device;
+
+export const StyledHeaderNavigationItem = styled(NavLink)`
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100%;
   font-weight: 400;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-500);
   color: var(--color-gray-300);
   text-decoration: none;
 
@@ -20,7 +23,11 @@ export const HeaderNavigationItem = styled(NavLink)`
     color: var(--color-blue-300);
   }
 
-  &:not(:last-child) {
+  @media screen and ${tablet} {
+    font-size: var(--font-size-300);
+
+    &:not(:last-child) {
       margin-right: 10px;
     }
+  }
 `;

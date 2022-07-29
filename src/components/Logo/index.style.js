@@ -13,7 +13,6 @@ export const StyledLogo = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   align-items: center;
-  border: 1px solid green;
 
   @media screen and ${mobile} {
     font-weight: 500;
@@ -24,11 +23,6 @@ export const StyledLogo = styled(Link)`
     font-weight: 600;
     font-size: var(--font-size-500);
   }
-
-  ${'' /* @media screen and ${desktop} {
-    font-weight: 600;
-    font-size: var(--font-size-500);
-  } */}
 `;
 
 export const LogoAccent = styled.span`

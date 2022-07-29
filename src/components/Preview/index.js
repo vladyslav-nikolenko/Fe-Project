@@ -1,8 +1,6 @@
 import React from 'react';
 import { CgComment } from 'react-icons/cg';
 
-// import Container from '../Container';
-
 import {
   StyledPreview,
   PreviewImage,
@@ -34,7 +32,7 @@ function Preview({
   if (cutText.length < spoiler.length) {
         cutText += '... ';
         }
-  // <PreviewLink href={`/${id}`}>
+
   const categoryLower = category.toLowerCase();
 
   return (

@@ -4,11 +4,10 @@ import device from '../../constants/device';
 
 const { mobile, tablet, desktop } = device;
 
-export const ArticlePageStyled = styled.div`
+export const StyledArticlePage = styled.div`
    width: 270px;
    margin: 0 auto;
    padding: 15px 0px;
-   ${'' /* border: 1px solid blue; */}
 
    @media screen and ${mobile} {
       width: 450px;
@@ -23,6 +22,26 @@ export const ArticlePageStyled = styled.div`
    }
 `;
 
+export const AuthorName = styled.p`
+   font-weight: 600;
+   font-size: var(--font-size-300);
+   color: var(--color-blue-300);
+   margin-bottom: 15px;
+`;
+
+export const AuthorLink = styled.a`
+   font-weight: 600;
+   font-size: var(--font-size-300);
+   color: var(--color-gray-300);
+   text-decoration: none;
+   margin-left: 10px;
+
+   &:hover,
+   &:focus {
+      color: var(--color-blue-100);
+   }
+`;
+
 export const ArticleImage = styled.img`
    display: block;
    width: 100%;
@@ -31,6 +50,7 @@ export const ArticleImage = styled.img`
    border-radius: 4px;
 `;
 
+
 export const ArticleTitle = styled.h2`
    font-weight: 600;
    font-size: var(--font-size-300);
@@ -38,8 +58,6 @@ export const ArticleTitle = styled.h2`
    line-height: 1.15;
    text-transform: uppercase;
    margin-bottom: 15px;
-
-   border: 2px solid red;
 `;
 
 export const ArticleText = styled.p`
@@ -64,30 +82,15 @@ export const ArticleImageThumbnail = styled.img`
    height: auto;
    border-radius: 4px;
    cursor: pointer;
+
    @media screen and ${mobile} {
       float: right;
       margin-bottom: 0px;
    }
 `;
 
-export const Backdrop = styled.div`
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background-color: rgba(0, 0, 0, 0.8);
-`;
 
-export const ModalWindow = styled.div`
-   max-width: calc(100vw - 48px);
-   max-height: calc(100vh - 24px);
-`;
-
-export const Image = styled.img`
+export const ImageInModal = styled.img`
    border-radius: 8px;
    width: 90vh;
 `;

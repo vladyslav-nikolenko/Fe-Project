@@ -5,7 +5,7 @@ import device from '../../constants/device';
 
 const { mobile, tablet, desktop } = device;
 
-export const CommentFormStyled = styled.form`
+export const StyledCommentForm = styled.form`
   padding: 10px 0px;
   display: flex;
   flex-direction: column;

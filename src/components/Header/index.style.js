@@ -4,8 +4,6 @@ import device from '../../constants/device';
 
 const {  tablet   } = device;
 
-// import Button from '../Button';
-
 export const StyledHeader = styled.header`
   padding-top: 15px;
   padding-bottom: 15px;
@@ -23,29 +21,9 @@ export const Wrapper = styled.div`
   position: relative;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid green;
-`;
-
-export const UserLogin = styled.div`
-display: flex;
-margin: 0;
 `;
 
 
-export const MobileMenuOpenBtn = styled.button`
-  display: block;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  top: 5px;
-  right: 15px;
-
-  @media screen and ${tablet} {
-    display: none;
-  }
-`;
 
 
 

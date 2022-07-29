@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonStyled = styled.button`
+export const StyledButton = styled.button`
   display: block;
   margin: 0;
   min-width: 100px;

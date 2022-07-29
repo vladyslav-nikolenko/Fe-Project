@@ -2,7 +2,7 @@ import React from 'react';
 import { BiUser } from 'react-icons/bi';
 
 import {
-  CommentItemStyled,
+  StyledCommentItem,
   CommentIconContainer,
   CommentUser,
   CommentText
@@ -10,13 +10,13 @@ import {
 
 function CommentItem({ sentBy, text }) {
   return (
-    <CommentItemStyled>
+    <StyledCommentItem>
       <CommentIconContainer>
         <BiUser />
         <CommentUser>{sentBy?.username}</CommentUser>
       </CommentIconContainer>
         <CommentText>{text}</CommentText>
-    </CommentItemStyled>
+    </StyledCommentItem>
   );
 }
 

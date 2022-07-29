@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import Header from './components/Header';
-import All from './pages/All';
-import Admin from './pages/Admin';
-import Create from './pages/Admin/Create';
-import Edit from './pages/Admin/Edit';
-import ArticlePage from './components/ArticlePage';
-import UserContext from './UserContext';
-import Footer from './components/Footer';
-import CommentsApproval from './components/CommentsApproval';
-import Author from './pages/Author';
+import Header from '../Header';
+import All from '../../pages/All';
+import Admin from '../../pages/Admin';
+import Create from '../../pages/Admin/Create';
+import Edit from '../../pages/Admin/Edit';
+import ArticlePage from '../ArticlePage';
+import UserContext from '../../UserContext';
+import Footer from '../Footer';
+import CommentsApproval from '../CommentsApproval';
+import Author from '../../pages/Author';
+
+import { AppStyled } from './index.style';
 
 const { REACT_APP_BASE_CLIENT_URL } = process.env;
 
@@ -42,13 +44,14 @@ function App() {
       .then(response => response.json())
       .then(resp => {
         setUser(resp.user);
-        console.log(resp.user);
+        // console.log(resp.user);
       });
   }, []);
 
   return (
     <UserContext.Provider value={value}>
       <Router>
+        <AppStyled>
         <Header/>
 
         <div className='main'>
@@ -67,8 +70,9 @@ function App() {
             <Route path='/commentsapproval' element={<CommentsApproval />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
-        </div>
-        <Footer />
+          </div>
+          </AppStyled>
+          <Footer />
       </Router>
     </UserContext.Provider>
   );

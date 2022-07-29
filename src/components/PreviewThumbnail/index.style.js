@@ -8,21 +8,17 @@ export const StyledPreviewThumbnail = styled.li`
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding-bottom: 50px;
-
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+    padding-bottom: 70px;
 
   @media screen and ${mobile} {
     padding-bottom: 30px;
   }
 
-  ${'' /* @media screen and ${mobileEnd} {
+  @media screen and ${mobileEnd} {
     &:not(:last-child) {
     margin-bottom: 20px;
     }
-  } */}
+  }
 
   @media screen and ${tablet} {
     flex-basis: calc(100% / 2 - 30px);
@@ -31,12 +27,12 @@ export const StyledPreviewThumbnail = styled.li`
   }
 
   @media screen and ${desktop} {
-    padding-bottom: 70px;
     flex-basis: calc(100% / 4 - 30px);
+    padding-bottom: 70px;
   }
 `;
 
-export const PreviewImage = styled.img`
+export const PreviewThumbnailImage = styled.img`
     display: block;
     width: 100%;
     height: auto;

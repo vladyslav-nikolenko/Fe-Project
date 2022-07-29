@@ -1,7 +1,6 @@
 import React from 'react';
 import { CgComment } from 'react-icons/cg';
 
-
 import {
     CategoryWrapper,
     Category,
@@ -12,7 +11,7 @@ import {
 
 import {
     StyledPreviewThumbnail,
-    PreviewImage,
+    PreviewThumbnailImage,
     PreviewTitleThumbnail,
     ContentContainer,
     PreviewContent
@@ -28,7 +27,7 @@ function PreviewThumbnail({
     comments = 0
     }) {
 
-    let cutTextThumbnail = spoiler.slice(0, 90);
+    let cutTextThumbnail = spoiler.slice(0, 80);
 
     if (cutTextThumbnail.length < spoiler.length) {
         cutTextThumbnail += '... ';
@@ -37,7 +36,7 @@ function PreviewThumbnail({
 
     return (
         <StyledPreviewThumbnail>
-          <PreviewImage src={`images/${image}`} alt='article'/>
+          <PreviewThumbnailImage src={`images/${image}`} alt='article'/>
             <CategoryWrapper>
               <Category href={categoryLower}>{category}</Category>
                 <IconWrapper>

@@ -3,19 +3,22 @@ import { BiUser } from 'react-icons/bi';
 
 import UserContext from '../../UserContext';
 import IdentificationModal from '../IdentificationModal';
-import Button from '../Button';
 
 import {
-  HeaderAuthStyled,
+  StyledHeaderAuth,
   UserProfileWrapper,
-  UserProfile
+  UserProfile,
+  AuthBtn
 } from './index.style';
 
   function setToken(json) {
   localStorage.setItem('token', json?.token);
 }
 
-function HeaderAuth() {
+function HeaderAuth({
+  visibleAuth = false,
+  flexDirection = false
+  }) {
   const [visible, setVisible] = useState(false);
   const { user, setUser } = useContext(UserContext);
 
@@ -32,20 +35,22 @@ function HeaderAuth() {
   return (
     <div>
       {user
-        ? <HeaderAuthStyled>
+        ? <StyledHeaderAuth
+          visibleAuth={visibleAuth}
+          flexDirection={flexDirection}>
             <UserProfileWrapper>
               <BiUser />
               <UserProfile>{user?.username}</UserProfile>
             </UserProfileWrapper>
-              <Button onClick={onLogout} text='Log Out' />
-          </HeaderAuthStyled>
-        :  <HeaderAuthStyled>
-              <Button onClick={() => setVisible(true)} text='Log In' />
+              <AuthBtn onClick={onLogout} text='Log Out'/>
+          </StyledHeaderAuth>
+        :  <StyledHeaderAuth visibleAuth={visibleAuth}>
+              <AuthBtn onClick={() => setVisible(true)} text='Log In' />
                 <IdentificationModal
                   show={visible}
                   visible={() => setVisible(false)}
                   onLogin={onLogin} />
-            </HeaderAuthStyled>
+            </StyledHeaderAuth>
       }
     </div>
   );
