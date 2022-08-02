@@ -18,9 +18,9 @@ export const AuthorHeading = styled.h2`
 `;
 
 export const AuthorList = styled.ul`
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   @media screen and ${tablet} {
     display: flex;

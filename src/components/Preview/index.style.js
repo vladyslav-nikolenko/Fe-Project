@@ -5,7 +5,7 @@ import device from '../../constants/device';
 const { desktop } = device;
 
 export const StyledPreview = styled.li`
-  display:  flex;
+  display: flex;
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -55,17 +55,17 @@ export const Category = styled.a`
   }
 
   @media screen and ${desktop} {
-  font-size: var(--font-size-300);
-}
+    font-size: var(--font-size-300);
+  }
 `;
 
 export const IconWrapper = styled.div`
-display: flex;
-justify-content: flex-end;
-align-items: center;
-font-weight: 400;
-font-size: var(--font-size-200);
-color: var(--color-blue-200);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: 400;
+  font-size: var(--font-size-200);
+  color: var(--color-blue-200);
 
   &:hover,
   &:focus {
@@ -73,7 +73,7 @@ color: var(--color-blue-200);
   }
 
   @media screen and ${desktop} {
-  font-size: var(--font-size-300);
+    font-size: var(--font-size-300);
   }
 `;
 
@@ -88,7 +88,7 @@ export const PreviewComment = styled.a`
   }
 `;
 
-export  const PreviewTitle = styled.h2`
+export const PreviewTitle = styled.h2`
   font-weight: 600;
   font-size: var(--font-size-200);
   color: var(--color-black);
