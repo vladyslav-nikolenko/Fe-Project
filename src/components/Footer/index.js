@@ -1,17 +1,26 @@
 import React from 'react';
-import cn from 'classnames';
 
-import style from './styles/index.module.css';
+import {
+    StyledFooter,
+    FooterText,
+    TextContainer,
+    IconContainer,
+    IconHeart
+} from './index.style';
 
 function Footer() {
-
     return (
-        <div className={cn(style.footer)}>
-            <div className={cn(style.footerContent)}>
-                <p>© 2022 | All Rights Reserved | Developed by Wroclaw Mastery Team</p>
-            </div>
-        </div>
+        <StyledFooter>
+            <FooterText>© 2022 | All Rights Reserved |</FooterText>
+                <TextContainer>
+                    <IconContainer>
+                        <FooterText>Developed with</FooterText>
+                        <IconHeart />
+                    </IconContainer>
+                    <FooterText>by Wroclaw Mastery Team</FooterText>
+                </TextContainer>
+        </StyledFooter>
     );
-}
+};
 
 export default Footer;

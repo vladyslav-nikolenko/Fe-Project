@@ -4,7 +4,10 @@ import { useParams } from 'react-router-dom';
 import CommentItem from '../CommentItem';
 import { getCommentsByArticleId } from '../../api/comments';
 
-import s from './CommentList.module.css';
+import {
+  StyledCommentList,
+  CommentListTitle
+} from './index.style';
 
 function CommentList() {
   const { id: articleId } = useParams();
@@ -20,13 +23,16 @@ function CommentList() {
   }
 
   return (
-      <ul className={s.list}>
-        {!comments.length ?
+      <StyledCommentList>
+      {!comments.length
+        ?
           <div>
-            <h2 className={s.title}>This article has no comments yet.</h2>
-          </div> :
+            <CommentListTitle>This article has no comments yet.
+            </CommentListTitle>
+          </div>
+        :
           <div>
-            <h2 className={s.title}>Comments</h2>
+            <CommentListTitle>Comments</CommentListTitle>
             {comments.map(({ _id, sentBy, approved, text }) => (
               <CommentItem
                 key={_id}
@@ -37,7 +43,7 @@ function CommentList() {
             ))}
           </div>
         }
-      </ul>
+      </StyledCommentList>
     );
   ;
 };

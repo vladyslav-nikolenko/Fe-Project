@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
+import Container from '../Container';
 import CommentItem from '../CommentItem';
-import { deleteCommentById, getComments, patchCommentById } from '../../api/comments';
-import s from '../CommentList/CommentList.module.css';
+import {
+    deleteCommentById,
+    getComments,
+    patchCommentById
+} from '../../api/comments';
+
+
+import {
+    CommentsApprovalStyled,
+    CommentsApprovalTitle,
+    CommentsApprovalBtn,
+    BtnWrapper
+} from './index.style';
 
 function CommentsApproval() {
     const [comments, setComments] = useState([]);
@@ -12,23 +24,26 @@ function CommentsApproval() {
     }, []);
 
     return (
-        <ul className={s.list}>
-            <div>
-                <h2 className={s.title}>Comments approval list</h2>
+    <Container>
+        <CommentsApprovalStyled>
+            <CommentsApprovalTitle>Comments approval list
+            </CommentsApprovalTitle>
                 {comments.map(({ _id, sentBy, text }) => (
                     <React.Fragment key={_id}>
                         <CommentItem
                             sentBy={sentBy}
                             text={text}
                         />
-                        <button onClick={() => patchCommentById(_id, { approved: true })
-                            .then(setComments)}>Approve
-                        </button>
-                        <button onClick={() => deleteCommentById(_id).then(setComments)}>Delete</button>
+                        <BtnWrapper>
+                        <CommentsApprovalBtn onClick={() => patchCommentById(_id, { approved: true })
+                            .then(setComments)} text='Approve' />
+                        <CommentsApprovalBtn onClick={() => deleteCommentById(_id)
+                                .then(setComments)} text='Delete' />
+                        </BtnWrapper>
                     </React.Fragment>
                 ))}
-            </div>
-        </ul>
+            </CommentsApprovalStyled>
+            </Container>
     );
 }
 

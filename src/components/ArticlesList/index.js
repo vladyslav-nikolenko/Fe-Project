@@ -1,13 +1,19 @@
-import { UnorderedList, Pane, Button, Spinner } from 'evergreen-ui';
+import React from 'react';
 
+import Container from '../Container';
 import Preview from '../Preview';
 import PreviewThumbnail from '../PreviewThumbnail';
+
+import {
+  StyledPreviewThumbnailList,
+  StyledPreviewList,
+  LoadMoreBtn
+} from './index.style';
 
 function ArticleList({
   articles,
   highlights = true,
   haveMore = false,
-  // haveMore = true,
   isLoading,
   onLoading
 }) {
@@ -27,71 +33,40 @@ function ArticleList({
   }
 
   return (
-    <Pane>
-      <Pane
-        width='1200px'
-        paddingX='15px'
-        paddingY='10px'
-        marginX='auto'
-        marginY='0'
-      >
-        <UnorderedList
-          display='flex'
-          flexWrap='wrap'
-          marginLeft='-30px'
-          marginBottom='-30px'
-          justifyContent='space-between'
-        >
-          {highlightsArrayPreview
-            ? highlightsArrayPreview.map(
-              ({ _id, category, title, content, image, url }, index) => (
-                <PreviewThumbnail
-                  id={_id}
-                  key={index}
-                  title={title}
-                  category={category}
-                  image={image}
-                  spoiler={content}
-                  type='thumbnail'
-                  url={url}
-                />
-              )) : null}
-        </UnorderedList>
-      </Pane>
-      {rowArrayPreview.map(({ category, title, content, image, url, _id }, index) => (
-        <Pane
-          key={index}
-          width='1200px'
-          paddingX='15px'
-          paddingY='5px'
-          marginX='auto'
-        >
-          <Preview
-            id={_id}
-            title={title}
-            category={category}
-            image={image}
-            spoiler={content}
-            type='full'
-            url={url}
-            categoryVisibility={categoryVisibility}
-          />
-        </Pane>
-      ))}
-      {haveMore ?
-        <Button
-          display='block'
-          marginY='0px'
-          marginX='auto'
-          minWidth='200px'
-          textAlign='center'
-          paddingBottom='20px'
-          lineHeight='26px'
-          onClick={onLoading}
-        >Load more news
-        </Button> : null}
-      {isLoading ? <Spinner /> : null}
-    </Pane>
+    <Container>
+      <StyledPreviewThumbnailList>
+        {highlightsArrayPreview
+          ? highlightsArrayPreview.map(
+            ({ _id, category, title, content, image, url }, index) => (
+              <PreviewThumbnail
+                id={_id}
+                key={index}
+                title={title}
+                category={category}
+                image={image}
+                spoiler={content}
+                type='thumbnail'
+                url={url} />))
+          : null}
+        </StyledPreviewThumbnailList>
+        <StyledPreviewList>
+          {rowArrayPreview.map(({ category, title, content, image, url, _id }, index) => (
+            <Preview
+              id={_id}
+              key={index}
+              title={title}
+              category={category}
+              image={image}
+              spoiler={content}
+              type='full'
+              url={url}
+              categoryVisibility={categoryVisibility} />
+          ))}
+      </StyledPreviewList>
+        {haveMore
+          ? (<LoadMoreBtn onClick={onLoading} />)
+          : null}
+      </Container>
   );
 }
 
