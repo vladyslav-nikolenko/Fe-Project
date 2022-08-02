@@ -11,6 +11,7 @@ import UserContext from './UserContext';
 import Footer from './components/Footer';
 import CommentsApproval from './components/CommentsApproval';
 import Author from './pages/Author';
+import ArticlesApproval from './components/ArticlesApproval';
 
 const { REACT_APP_BASE_CLIENT_URL } = process.env;
 
@@ -74,6 +75,7 @@ function App() {
             <Route path='/articles/:author' element={<Author />} />
             <Route path='/:id' element={<ArticlePage />} />
             <Route path='/commentsapproval' element={<CommentsApproval />} />
+            <Route path='/articlesapproval' element={<ArticlesApproval />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
         </div>

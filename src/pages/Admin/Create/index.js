@@ -27,6 +27,7 @@ function Create() {
     formData.append('content', body.content);
     formData.append('image', body.image);
     formData.append('thumbnail', body.thumbnail);
+    formData.append('user', user.username);
 
     return fetch(`/articles`, {
       method: 'POST',
@@ -90,7 +91,7 @@ function Create() {
   return (
     <form className={cn(style.createArticle)} >
       {success &&
-        <p className={cn(style.success)}>Your article will be published.</p>}
+        <p className={cn(style.success)}>Your article will be published after admin approval.</p>}
       {error && <pt className={cn(style.error)}>Something was wrong. Please try again later.</pt>}
       <div >
         <div className={cn(style.labelSelect)} >Select category</div>

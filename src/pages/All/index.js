@@ -7,12 +7,13 @@ import ArticleList from '../../components/ArticlesList';
 function All(props) {
   const [articles, setArticles] = useState([]);
   const { category } = props;
+  const isApproved = true;
 
   useEffect(() => {
     if (category) {
       getArticlesByCategory(category).then(setArticles);
     } else {
-      getArticles(articles).then(setArticles);
+      getArticles(isApproved).then(setArticles);
     }
   }, []);
 

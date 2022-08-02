@@ -10,8 +10,8 @@ export async function addArticle(data) {
   return result;
 }
 
-export async function getArticles() {
-  const url = '/articles';
+export async function getArticles(isApproved) {
+  const url = `/articles/${isApproved}`;
   const result = await handleResponse(url);
 
   return result;
