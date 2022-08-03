@@ -6,6 +6,4 @@ metadata:
     app: news-client-dev
 data:
   ENVIRONMENT: dev
-  APP_NAME: news-client
-  APP_COLOR: blue
   BASE_SERVER_URL: ${DEV_APP_BASE_SERVER_URL}
