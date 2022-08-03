@@ -11,10 +11,9 @@ import UserContext from '../../UserContext';
 import Footer from '../Footer';
 import CommentsApproval from '../CommentsApproval';
 import Author from '../../pages/Author';
+import { REACT_APP_BASE_SERVER_URL } from '../../constants/env';
 
 import { AppStyled } from './index.style';
-
-const { REACT_APP_BASE_CLIENT_URL } = process.env;
 
 function getToken() {
   return localStorage.getItem('token');
@@ -34,7 +33,7 @@ function App() {
   );
 
   useEffect(() => {
-    fetch(`${REACT_APP_BASE_CLIENT_URL}/user/me`, {
+    fetch(`${REACT_APP_BASE_SERVER_URL}/user/me`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +43,6 @@ function App() {
       .then(response => response.json())
       .then(resp => {
         setUser(resp.user);
-        // console.log(resp.user);
       });
   }, []);
 
@@ -52,27 +50,27 @@ function App() {
     <UserContext.Provider value={value}>
       <Router>
         <AppStyled>
-        <Header/>
+          <Header />
 
-        <div className='main'>
-          <Routes>
-            <Route exact path='/' element={<All />} />
-            <Route exact path='/all' element={<All />} />
-            <Route exact path='/people' element={<All category='people' />} />
-            <Route exact path='/places' element={<All category='places' />} />
-            <Route exact path='/events' element={<All category='events' />} />
-            <Route path='/admin' element={<Admin user={user} />}>
-              <Route path='create' element={<Create />} />
-              <Route path='edit' element={<Edit />} />
-            </Route>
-            <Route path='/articles/:author' element={<Author />} />
-            <Route path='/:id' element={<ArticlePage />} />
-            <Route path='/commentsapproval' element={<CommentsApproval />} />
-            <Route path='*' element={<Navigate to='/' />} />
-          </Routes>
+          <div className='main'>
+            <Routes>
+              <Route exact path='/' element={<All />} />
+              <Route exact path='/all' element={<All />} />
+              <Route exact path='/people' element={<All category='people' />} />
+              <Route exact path='/places' element={<All category='places' />} />
+              <Route exact path='/events' element={<All category='events' />} />
+              <Route path='/admin' element={<Admin user={user} />}>
+                <Route path='create' element={<Create />} />
+                <Route path='edit' element={<Edit />} />
+              </Route>
+              <Route path='/articles/:author' element={<Author />} />
+              <Route path='/:id' element={<ArticlePage />} />
+              <Route path='/commentsapproval' element={<CommentsApproval />} />
+              <Route path='*' element={<Navigate to='/' />} />
+            </Routes>
           </div>
-          </AppStyled>
-          <Footer />
+        </AppStyled>
+        <Footer />
       </Router>
     </UserContext.Provider>
   );
