@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Pane } from 'evergreen-ui';
 
 import { getArticles, getArticlesByCategory } from '../../api/articles';
 import ArticleList from '../../components/ArticlesList';
+import Loader  from '../../components/Loader';
 
 function All(props) {
   const [articles, setArticles] = useState([]);
@@ -15,17 +15,17 @@ function All(props) {
     } else {
       getArticles(isApproved).then(setArticles);
     }
-  }, []);
+  }, [category]);
 
 if (!articles.length) {
-    return <>Loading...</>;
+    return <Loader/>;
   }
   const articleProps = category ? { highlights: false } : {};
 
   return (
-    <Pane>
-      {category ? <ArticleList articles={articles} highlights={false} />:<ArticleList articles={articles}/>}
-    </Pane>
+    <div>
+      <ArticleList articles={articles} {...articleProps} />
+    </div>
   );
 }
 

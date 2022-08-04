@@ -1,9 +1,10 @@
+import { REACT_APP_BASE_SERVER_URL } from '../constants/env';
+
 const token = localStorage.getItem('token');
 const initialHeaders = {
   'Content-Type': 'application/json',
   token
 };
-const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 async function handleResponse(url, method = 'GET', headers = {}) {
   const baseUrl = REACT_APP_BASE_SERVER_URL;
@@ -18,7 +19,7 @@ async function handleResponse(url, method = 'GET', headers = {}) {
     const response = await fetch(fullUrl, requestOptions);
     const result = await response.json();
 
-    console.log(result);
+    // console.log(result);
 
     return result;
   } catch (error) {

@@ -1,17 +1,22 @@
 import React from 'react';
-import { ImUser } from 'react-icons/im';
+import { BiUser } from 'react-icons/bi';
 
-import s from './CommentItem.module.css';
+import {
+  StyledCommentItem,
+  CommentIconContainer,
+  CommentUser,
+  CommentText
+} from './index.style';
 
 function CommentItem({ sentBy, text }) {
   return (
-    <li className={s.item}>
-      <div className={s.icon}>
-        <ImUser />
-        <p className={s.user}>{sentBy?.username}</p>
-      </div>
-      <p className={s.text}>{text}</p>
-    </li>
+    <StyledCommentItem>
+      <CommentIconContainer>
+        <BiUser />
+        <CommentUser>{sentBy?.username}</CommentUser>
+      </CommentIconContainer>
+        <CommentText>{text}</CommentText>
+    </StyledCommentItem>
   );
 }
 
