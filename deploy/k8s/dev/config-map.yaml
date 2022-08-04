@@ -7,4 +7,3 @@ metadata:
 data:
   ENVIRONMENT: dev
   BASE_SERVER_URL: ${DEV_APP_BASE_SERVER_URL}
-  BASE_SERVER_URL1: qwe

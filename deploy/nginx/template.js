@@ -1,5 +1,4 @@
 window.envConfig = {
   ENVIRONMENT: '${ENVIRONMENT}',
-  APP_NAME: '${APP_NAME}',
-  APP_COLOR: '${APP_COLOR}'
+  BASE_SERVER_URL: '${BASE_SERVER_URL}'
 };
