@@ -12,8 +12,10 @@ import Footer from '../Footer';
 import CommentsApproval from '../CommentsApproval';
 import Author from '../../pages/Author';
 import { REACT_APP_BASE_SERVER_URL } from '../../constants/env';
+import ArticlesApproval from '../ArticlesApproval';
 
 import { AppStyled } from './index.style';
+
 
 function getToken() {
   return localStorage.getItem('token');
@@ -66,6 +68,7 @@ function App() {
               <Route path='/articles/:author' element={<Author />} />
               <Route path='/:id' element={<ArticlePage />} />
               <Route path='/commentsapproval' element={<CommentsApproval />} />
+              <Route path='/articlesapproval' element={<ArticlesApproval />} />
               <Route path='*' element={<Navigate to='/' />} />
             </Routes>
           </div>

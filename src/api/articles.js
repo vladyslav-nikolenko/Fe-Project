@@ -10,8 +10,8 @@ export async function addArticle(data) {
   return result;
 }
 
-export async function getArticles() {
-  const url = '/articles';
+export async function getArticles(isApproved = true) {
+  const url = `/articles/${isApproved}`;
   const result = await handleResponse(url);
 
   return result;
@@ -25,7 +25,7 @@ export async function getArticleByAuthor(userPath) {
 }
 
 export async function getArticleById(id) {
-  const url = `/articles/${id}`;
+  const url = `/articles/article/${id}`;
   const result = await handleResponse(url);
 
   return result;

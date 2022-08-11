@@ -7,12 +7,13 @@ import Loader  from '../../components/Loader';
 function All(props) {
   const [articles, setArticles] = useState([]);
   const { category } = props;
+  const isApproved = true;
 
   useEffect(() => {
     if (category) {
       getArticlesByCategory(category).then(setArticles);
     } else {
-      getArticles(articles.length).then(setArticles);
+      getArticles(isApproved).then(setArticles);
     }
   }, [category]);
 

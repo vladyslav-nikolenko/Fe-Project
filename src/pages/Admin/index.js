@@ -43,6 +43,13 @@ function Admin({ user }) {
       >
         <NavLink to='/commentsapproval'>Comments</NavLink>
       </Button>
+      <Button
+          marginX='20px'
+          width='90px'
+          marginY='15px'
+      >
+        <NavLink to='/articlesapproval'>Articles</NavLink>
+      </Button>
       <Outlet />
     </Pane >
   );

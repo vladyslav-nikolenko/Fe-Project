@@ -1,4 +1,4 @@
-import { REACT_APP_BASE_SERVER_URL } from '../constants/env';
+import { REACT_APP_BASE_SERVER_URL } from '../constants/env/index';
 
 const token = localStorage.getItem('token');
 const initialHeaders = {
