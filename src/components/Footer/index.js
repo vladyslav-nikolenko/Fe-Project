@@ -17,7 +17,7 @@ function Footer() {
                         <FooterText>Developed with</FooterText>
                         <IconHeart />
                     </IconContainer>
-                    <FooterText>by Wroclaw Mastery Team</FooterText>
+                    <FooterText></FooterText>
                 </TextContainer>
         </StyledFooter>
     );
